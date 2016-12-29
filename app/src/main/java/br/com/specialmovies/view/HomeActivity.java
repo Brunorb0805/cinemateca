@@ -106,7 +106,7 @@ public class HomeActivity extends AppCompatActivity {
         fabSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SearchMovieWS searchMovieWS = new SearchMovieWS();
+//                SearchMovieWS searchMovieWS = new SearchMovieWS();
 
                 Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
                 startActivity(intent);

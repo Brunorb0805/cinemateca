@@ -1,71 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="br.com.specialmovies.view.SearchActivity">
+    android:background="@drawable/background_header"
+    android:fitsSystemWindows="true">
 
-    <android.support.design.widget.AppBarLayout
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:hint="@string/hint_search"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName"
+                android:layout_toLeftOf="@+id/liked_imageview"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <ImageView
+                android:id="@+id/liked_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="11dp"
+                android:src="@drawable/ic_search" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:id="@+id/alert_not_found_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@+id/toolbar">
+
+        <include layout="@layout/fragment_not_found" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/alert_no_internet_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@+id/toolbar">
+
+        <include layout="@layout/fragment_no_internet" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/movies_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:dividerHeight="0.8dp"
+        android:requiresFadingEdge="vertical"
+        android:scrollbars="none" />
+
+
+    <LinearLayout
+        android:id="@+id/loader_linearlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/background_header"
-            app:popupTheme="@style/AppTheme.PopupOverlay" >
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loader"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicatorColor="@color/colorAccent"
+            app:indicatorName="BallPulseIndicator" />
 
-            <Button
-                android:id="@+id/bt_search"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/search_icon"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="5dp"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/relative_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/et_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/hint_search"
-                    android:inputType="textPersonName"
-                    android:layout_marginRight="15dp"
-                    android:maxLines="1" />
-
-            </android.support.design.widget.TextInputLayout>
-
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_search" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/gren"
-        app:srcCompat="@drawable/add_database_icon" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/gren"
-        app:srcCompat="@drawable/cancel_icon" />
+    </LinearLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

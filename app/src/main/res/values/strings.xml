@@ -1,41 +1,31 @@
 <resources>
     <string name="app_name">Cinemateca</string>
-    <string name="action_settings">Settings</string>
     <string name="description_image_splash">Imagem da tela de apresentação</string>
 
     <string name="home_title">Cinemateca</string>
     <string name="info_title">Detalhes</string>
-
-    <string name="searching">Carregando...</string>
-    <string name="saving">Salvando...</string>
-    <string name="title_activity_search">Search Activity</string>
-
     <string name="hint_search">Que filme você procura?</string>
-    <string name="tv_movie_detailse">Detalhes do filme</string>
 
-    <string name="tv_released">Lançamento:</string>
-    <string name="tv_country_language">País/Idioma:</string>
-    <string name="tv_genre">Gênero:</string>
-    <string name="tv_language">Idioma:</string>
-    <string name="tv_plot">Enredo:</string>
-    <string name="tv_actors">Atores:</string>
-    <string name="tv_director">Diretor:</string>
-    <string name="tv_writer">Roterista:</string>
-    <string name="tv_awards">Prêmiações:</string>
-
-    <string name="bt_delete">Apagar</string>
-
+    <string name="tv_released">Lançamento</string>
+    <string name="tv_country_language">País/Idioma</string>
+    <string name="tv_actors">Atores</string>
+    <string name="tv_directed_by">Diretor(es)</string>
+    <string name="tv_written_by">Roterista(s)</string>
+    <string name="tv_produced_by">Produzido por</string>
+    <string name="tv_awards">Prêmiações</string>
+    <string name="tv_boxoffice">Bilheteria</string>
+    <string name="tv_imdb_rating">Avaliação IMDB</string>
 
     <!--Mensages alert-->
-    <string name="msg_note">Aviso</string>
-    <string name="msg_error_server">Falha de acesso ao servidor!</string>
-    <string name="msg_et_search_empty">Por favor, entre com o nome do filme.</string>
-    <string name="msg_movie_dont_found">Desculpe, filme não encontrado.</string>
-    <string name="msg_no_internet">Por favor, verifique sua conexão.</string>
-    <string name="msg_movie_null">Para salvar, primeiro pesquise um filme.</string>
-    <string name="msg_movie_saved">salvo com sucesso!</string>
-    <string name="msg_movie_dont_saved">já está salvo na Base de Dados!</string>
-    <string name="msg_error_save">Erro ao salvar!</string>
-    <string name="msg_error_path">Erro ao criar diretório! Tente novamente...</string>
+    <string name="msg_search_info_alert">Tente pesquisar algo mais específico.</string>
+    <string name="msg_not_found_alert">Nada encontrado…</string>
+    <string name="msg_no_favorite_hello">Olá!</string>
+    <string name="msg_no_favorite_description">Parece que você ainda não tem títulos salvos.</string>
+    <string name="msg_no_favorite_sub_description">Que tal começar a procurar? Clique no icone (+) \n e busque seus títulos favoritos</string>
+    <string name="msg_internet_alert">Ops!</string>
+    <string name="msg_no_internet">Isso acontece quando você está desconectado. \n Por favor, verifique sua conexão e tente novamente.</string>
+    <string name="msg_movie_saved">Salvo!</string>
+    <string name="msg_movie_delete">Removido!</string>
+    <string name="msg_movie_wait">Espere e tente novamente…</string>
 
 </resources>

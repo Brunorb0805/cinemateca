@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/not_found_imageview"
+        android:layout_width="130dp"
+        android:layout_height="156dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_no_internet" />
+
+    <TextView
+        style="@style/TextTitleAlert"
+        android:id="@+id/nothing_textview"
+        android:layout_below="@+id/not_found_imageview"
+        android:text="@string/msg_internet_alert" />
+
+
+    <TextView
+        style="@style/TextSubTitleAlert"
+        android:layout_below="@+id/nothing_textview"
+        android:text="@string/msg_no_internet"
+        android:textAlignment="center"/>
+
+</RelativeLayout>

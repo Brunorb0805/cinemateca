@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpecialMovies.iml" filepath="$PROJECT_DIR$/SpecialMovies.iml" />
+      <module fileurl="file://C:\ProjetosAndroidStudio\Cinemateca\cinemateca\SpecialMovies.iml" filepath="C:\ProjetosAndroidStudio\Cinemateca\cinemateca\SpecialMovies.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cinemateca.iml" filepath="$PROJECT_DIR$/cinemateca.iml" />
     </modules>
   </component>
 </project>

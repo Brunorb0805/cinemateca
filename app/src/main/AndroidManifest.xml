@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.specialmovies">
+    package="br.com.cinemateca">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.SplashActivity"
+            android:name="br.com.cinemateca.view.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -25,17 +25,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.HomeActivity"
+            android:name="br.com.cinemateca.view.Home.HomeActivity"
             android:label="@string/home_title"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.Menu" />
 
         <activity
-            android:name=".view.SearchActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name="br.com.cinemateca.view.Search.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar.Menu" />
 
         <activity
-            android:name=".view.InfoActivity"
-            android:label="@string/info_title"/>
+            android:name="br.com.cinemateca.view.Details.DetailsActivity"
+            android:label="@string/info_title"
+            android:theme="@style/AppTheme.NoActionBar.Menu"/>
     </application>
 
 </manifest>

@@ -92,6 +92,8 @@ public class SearchActivity extends AppCompatActivity implements ISearchView {
         mMovieList.clear();
         mMovieList.addAll(response);
         mAdapter.notifyDataSetChanged();
+        mAlertNoInternetRelativeLayout.setVisibility(View.GONE);
+        mAlertNotFoundRelativeLayout.setVisibility(View.GONE);
         hideLoading();
     }
 
@@ -99,14 +101,17 @@ public class SearchActivity extends AppCompatActivity implements ISearchView {
     public void callbackErrorSearchMovies(String response) {
         mMovieList.clear();
         mAdapter.notifyDataSetChanged();
-        hideLoading();
+        mAlertNoInternetRelativeLayout.setVisibility(View.GONE);
         mAlertNotFoundRelativeLayout.setVisibility(View.VISIBLE);
+        hideLoading();
     }
 
     @Override
     public void callbackSuccessSearchMoviesPage(List<Movie> response) {
         mMovieList.addAll(response);
         mAdapter.notifyDataSetChanged();
+        mAlertNoInternetRelativeLayout.setVisibility(View.GONE);
+        mAlertNotFoundRelativeLayout.setVisibility(View.GONE);
         hideLoading();
     }
 
@@ -120,6 +125,8 @@ public class SearchActivity extends AppCompatActivity implements ISearchView {
         mMovieList.clear();
         mAdapter.notifyDataSetChanged();
         mAlertNoInternetRelativeLayout.setVisibility(View.VISIBLE);
+        mAlertNotFoundRelativeLayout.setVisibility(View.GONE);
+        hideLoading();
     }
 
     @Override

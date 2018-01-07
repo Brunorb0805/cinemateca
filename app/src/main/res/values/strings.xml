@@ -21,7 +21,7 @@
     <string name="msg_not_found_alert">Nada encontrado…</string>
     <string name="msg_no_favorite_hello">Olá!</string>
     <string name="msg_no_favorite_description">Parece que você ainda não tem títulos salvos.</string>
-    <string name="msg_no_favorite_sub_description">Que tal começar a procurar? Clique no icone (+) \n e busque seus títulos favoritos</string>
+    <string name="msg_no_favorite_sub_description">Que tal começar a procurar? Clique no icone (+) \n e busque seus títulos favoritos.</string>
     <string name="msg_internet_alert">Ops!</string>
     <string name="msg_no_internet">Isso acontece quando você está desconectado. \n Por favor, verifique sua conexão e tente novamente.</string>
     <string name="msg_movie_saved">Salvo!</string>

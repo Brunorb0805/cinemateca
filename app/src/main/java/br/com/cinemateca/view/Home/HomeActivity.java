@@ -110,7 +110,7 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
         searchView.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
             public boolean onClose() {
-                mTitleToolbarTextView.setText(getResources().getString(R.string.app_name).toUpperCase());
+                mTitleToolbarTextView.setText(getResources().getString(R.string.app_name));
                 return false;
             }
         });

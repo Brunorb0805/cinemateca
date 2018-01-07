@@ -46,7 +46,7 @@ public class SearchMovieListAdapter extends RecyclerView.Adapter<SearchMovieList
 
         final Movie mMovieSelected = mMovieList.get(position);
 
-        if (!mMovieSelected.getPoster().equals("N/A")) {
+        if (mMovieSelected.getPoster() != null && !mMovieSelected.getPoster().isEmpty() && !mMovieSelected.getPoster().equals("N/A")) {
             Glide.with(mContext).load(mMovieSelected.getPoster()).into(holder.mPosterImageView);
         } else {
             holder.mPosterImageView.setBackground(mContext.getResources().getDrawable(R.drawable.shadow));

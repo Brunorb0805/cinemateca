@@ -329,7 +329,7 @@ public class DetailsActivity extends AppCompatActivity implements IDetailsView {
         mRatingTextView.setText(mMovie.getImdbRating());
 
         mPosterImageView = (ImageView) findViewById(R.id.poster_imageview);
-        if (!mMovie.getPoster().equals("N/A")) {
+        if (mMovie.getPoster() != null && !mMovie.getPoster().isEmpty() && !mMovie.getPoster().equals("N/A")) {
             Glide.with(this).load(mMovie.getPoster()).into(mPosterImageView);
         }
     }

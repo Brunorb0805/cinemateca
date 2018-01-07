@@ -125,7 +125,7 @@ public class DetailsActivity extends AppCompatActivity implements IDetailsView {
     public void callbackSuccessGetMovie(Movie response) {
         mMovie = response;
         setInformationMovie();
-        mMainScrollView.setVisibility(View.GONE);
+        mMainScrollView.setVisibility(View.VISIBLE);
         hideLoading();
     }
 

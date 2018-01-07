@@ -117,6 +117,8 @@ public class SearchActivity extends AppCompatActivity implements ISearchView {
 
     @Override
     public void callbackErrorSearchMoviesPage(String response) {
+        mMovieList.clear();
+        mAdapter.notifyDataSetChanged();
         hideLoading();
     }
 
@@ -186,10 +188,12 @@ public class SearchActivity extends AppCompatActivity implements ISearchView {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mPage = 1;
                 if (s.length() >= 3) {
-                    mPage = 1;
-                    if(!isSearch)
-                        sendRequest();
+                    sendRequest();
+                } else {
+                    mMovieList.clear();
+                    mAdapter.notifyDataSetChanged();
                 }
             }
 
@@ -201,11 +205,9 @@ public class SearchActivity extends AppCompatActivity implements ISearchView {
         mRecyclerView.addOnScrollListener(new EndlessScrollListener() {
             @Override
             public void onLoadMore() {
-                showLoading();
-                if (this != null) {
-                    mPage++;
-                    sendRequest();
-                }
+                mPage++;
+                sendRequest();
+
             }
         });
 

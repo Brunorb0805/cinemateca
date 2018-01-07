@@ -14,24 +14,25 @@ public abstract class EndlessScrollListener extends RecyclerView.OnScrollListene
 
     @Override
     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-        super.onScrolled(recyclerView, dx, dy);
 
-        int visibleItemCount = recyclerView.getChildCount();
-        int totalItemCount = recyclerView.getLayoutManager().getItemCount();
-        int firstVisibleItem = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
+        if (dy > 0) {
+            int visibleItemCount = recyclerView.getChildCount();
+            int totalItemCount = recyclerView.getLayoutManager().getItemCount();
+            int firstVisibleItem = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
 
-        if (mLoading) {
-            if ((totalItemCount > mPreviousTotal)) {
-                mLoading = false;
-                mPreviousTotal = totalItemCount;
+            if (mLoading) {
+                if ((totalItemCount > mPreviousTotal)) {
+                    mLoading = false;
+                    mPreviousTotal = totalItemCount;
+                }
             }
-        }
-        int visibleThreshold = 4;
-        if (!mLoading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
+            int visibleThreshold = 1;
+            if (!mLoading && (totalItemCount - visibleItemCount) <= (firstVisibleItem + visibleThreshold)) {
 
-            onLoadMore();
+                onLoadMore();
 
-            mLoading = true;
+                mLoading = true;
+            }
         }
     }
 

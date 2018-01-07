@@ -65,6 +65,19 @@
 
     </RelativeLayout>
 
+
+    <RelativeLayout
+        android:id="@+id/alert_no_internet_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@+id/toolbar">
+
+        <include layout="@layout/fragment_no_internet" />
+
+    </RelativeLayout>
+
+
     <ScrollView
         android:id="@+id/main_scrollview"
         android:layout_width="match_parent"

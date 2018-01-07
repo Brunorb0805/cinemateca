@@ -39,6 +39,7 @@ public class DetailsActivity extends AppCompatActivity implements IDetailsView {
     private ImageView mPosterImageView;
     private ImageView mLikedImageView;
     private RelativeLayout mLikedRelativeLayout;
+    private RelativeLayout mNoInternetRelativeLayout;
     private RelativeLayout mLoaderRelativeLayout;
     private ScrollView mMainScrollView;
     private TextView mTitleTextView;
@@ -124,6 +125,7 @@ public class DetailsActivity extends AppCompatActivity implements IDetailsView {
     public void callbackSuccessGetMovie(Movie response) {
         mMovie = response;
         setInformationMovie();
+        mMainScrollView.setVisibility(View.GONE);
         hideLoading();
     }
 
@@ -134,7 +136,10 @@ public class DetailsActivity extends AppCompatActivity implements IDetailsView {
 
     @Override
     public void callbackNoInternet() {
-
+        mLikedRelativeLayout.setEnabled(false);
+        mMainScrollView.setVisibility(View.GONE);
+        mNoInternetRelativeLayout.setVisibility(View.VISIBLE);
+        hideLoading();
     }
 
     @Override
@@ -145,7 +150,6 @@ public class DetailsActivity extends AppCompatActivity implements IDetailsView {
 
     @Override
     public void hideLoading() {
-        mMainScrollView.setVisibility(View.VISIBLE);
         mLoaderRelativeLayout.setVisibility(View.GONE);
     }
     //endregion
@@ -153,6 +157,7 @@ public class DetailsActivity extends AppCompatActivity implements IDetailsView {
 
     private void initView() {
         mLikedImageView = (ImageView) findViewById(R.id.liked_imageview);
+        mNoInternetRelativeLayout = (RelativeLayout) findViewById(R.id.alert_no_internet_relativelayout);
         mLikedRelativeLayout = (RelativeLayout) findViewById(R.id.liked_relativelayout);
         mLoaderRelativeLayout = (RelativeLayout) findViewById(R.id.progress_bar_relativelayout);
         mMainScrollView = (ScrollView) findViewById(R.id.main_scrollview);
